@@ -24,7 +24,7 @@ public class Merchant {
     			continue;
     		}
     	}
-    	System.out.println(cnt);
+    	System.out.println(">>> " + cnt);
     	return 0;
     }
 
