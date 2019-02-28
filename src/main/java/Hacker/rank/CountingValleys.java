@@ -12,14 +12,8 @@ public class CountingValleys {
 
 
 	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new FileReader(new File("C:\\Users\\TESTER\\Desktop\\input18.txt")));
-		String line = null;
-		String data = null;
-				while ((line = br.readLine()) != null) {
-					data = line;
-				}
-				System.out.println(countingValleys(12, data));
-				br.close();
+
+		System.out.println(countingValleys(12, ""));
 	}
 
 	public static int countingValleys(int n, String s) {
@@ -40,5 +34,4 @@ public class CountingValleys {
 		}
 		return v;
 	}
-
 }
