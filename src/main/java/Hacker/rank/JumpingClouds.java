@@ -7,6 +7,7 @@ public class JumpingClouds {
 		int j = 0;
 		for (int i = 1; i <= c.length-1; i++) {
 			if (c[i] == 1 && i == 3 && c[i-2] == 0) {
+				continue;
 			} else if (c[i] == 1 && c[i-1] == 0 && i != 1) {
 				j++;
 			} else if (c[i] == 0 && i < c.length-2) {
