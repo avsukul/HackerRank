@@ -17,18 +17,18 @@ public class CountingValleys {
 	}
 
 	public static int countingValleys(int n, String s) {
-		int g = 0, v =0;
-		boolean below = false;
+		int g = 0, v = 0;
+		boolean below = false; // track if previously under ground
 		for (int i = 0; i <= s.length() -1; i++) {
 			if (s.charAt(i) == 'U') {
-				g += 1; 
+				g += 1; // step up from/towards ground
 			} else if (s.charAt(i) == 'D') {
-				g -= 1;
+				g -= 1; //step down from/towards ground
 			}
 			if (g < 0 || below == true) {
-				below = true;
+				below = true; // below ground.
 				if (g == 0) {
-					v += 1; below = false;
+					v += 1; below = false; // made it back to ground. Reset below to false and start again.
 				}
 			}
 		}
