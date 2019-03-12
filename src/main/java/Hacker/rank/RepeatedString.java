@@ -1,49 +1,42 @@
 package Hacker.rank;
 
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.LinkedList;
+import java.math.BigDecimal;
 
 public class RepeatedString {
 
 	// Complete the repeatedString function below.
 	static long repeatedString(String s, long n) {
-		long a  = 0, m = 0, index = 0;
+		int a  = 0, j = 0, aa = 0; long len = n % s.length();
 		for (int i = 0 ; i <= s.length()-1; i++) {
-			if (s.charAt(i) == 'a') {
+			if (s.charAt(i)== 'a') {
 				a++;
-				index = i;
+				if (len > 0) {
+					if (s.charAt(j) == 'a') {
+						aa++; j = i; len--;
+					}
+				}
 			} else {
-				m++;
+				continue;
 			}
 		}
-		long len = s.length();
-		long w = n/len;
-		long x = n%len;
-		long y = 0;
-		if (index < x) {
-			 y = (x/index) + w;
-		}
-		y = a * len + x;
-		return y;
+		long v = (long) (n/(s.length() / 1000.00) * 1000000000000.00);
+		System.out.println(v);
+		return (long) ((Math.ceil(n/s.length()) * a) + aa);
 	}
 
 	public static void main(String[] args) throws IOException {
-		//        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
-		//
-		//        String s = scanner.nextLine();
-		//
-		//        long n = scanner.nextLong();
-		//        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
-		//    							 1000000000000
-		String s = "abcac"; long n = 10;
-		//        long result = repeatedString(s, n);
-		System.out.println(repeatedString(s, n));
-		//        bufferedWriter.write(String.valueOf(result));
-		//        bufferedWriter.newLine();
-		//
-		//        bufferedWriter.close();
-		//
-		//        scanner.close();
+//		String s = "aba"; long n = 10;
+//		System.out.println(repeatedString(s, n));
+//		String s1 = "a"; long n1 = 10;
+//		System.out.println(repeatedString(s1, n1));
+//		String s2 = "abcacg"; long n2 = 10;
+//		System.out.println(repeatedString(s2, n2));
+//		String s3 = "abcac"; long n3 = 10;
+//		System.out.println(repeatedString(s3, n3));
+//		String s4 = "gfcaaaecbg"; long n4 = 547602;
+//		System.out.println(repeatedString(s4, n4));
+		String s5 = "cfimaakj"; long n5 = 554045874191L;
+		System.out.println(repeatedString(s5,(long) n5));
 	}
 }
