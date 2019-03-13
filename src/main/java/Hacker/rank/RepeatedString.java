@@ -16,27 +16,30 @@ public class RepeatedString {
 						aa++; j = i; len--;
 					}
 				}
-			} else {
-				continue;
 			}
 		}
-		long v = (long) (n/(s.length() / 1000.00) * 1000000000000.00);
+		// 685118368975
+		long v = Math.round(n/s.length()/1.0);
 		System.out.println(v);
-		return (long) ((Math.ceil(n/s.length()) * a) + aa);
+		if ((n/s.length()) > 100.00) {
+			return Math.round(s.length()/1.0) * a + aa;
+		}
+		return n/s.length() * a + aa;
 	}
 
 	public static void main(String[] args) throws IOException {
 //		String s = "aba"; long n = 10;
 //		System.out.println(repeatedString(s, n));
-//		String s1 = "a"; long n1 = 10;
-//		System.out.println(repeatedString(s1, n1));
+		String s1 = "ojowrdcpavatfacuunxycyrmpbkvaxyrsgquwehhurnicgicmrpmgegftjszgvsgqavcrvdtsxlkxjpqtlnkjuyraknwxmnthfpt";
+		long n1 = 685118368975L;
+		System.out.println(repeatedString(s1, n1));
 //		String s2 = "abcacg"; long n2 = 10;
 //		System.out.println(repeatedString(s2, n2));
 //		String s3 = "abcac"; long n3 = 10;
 //		System.out.println(repeatedString(s3, n3));
 //		String s4 = "gfcaaaecbg"; long n4 = 547602;
 //		System.out.println(repeatedString(s4, n4));
-		String s5 = "cfimaakj"; long n5 = 554045874191L;
-		System.out.println(repeatedString(s5,(long) n5));
+//		String s5 = "cfimaakj"; long n5 = 554045874191L;
+//		System.out.println(repeatedString(s5,(long) n5));
 	}
 }
