@@ -1,10 +1,28 @@
 package Hacker.rank;
 
+
 public class t {
 	
 	public static void main(String[] args) {
-		System.out.println(Math.round(Math.pow((685118368975L/(100*1.0)*100.00)/100.00 * 6, 1)));
-		System.out.println(Math.round(Math.ceil((549382313570L / (100 * 1.0) * 100.00) / 100.00 * 3)));
-		System.out.println(Math.round(Math.ceil((872514961806L/(100*1.0)*100.00)/100.00 * 8)));
+		String s ="udjlitpopjhipmwgvggazhuzvcmzhulowmveqyktlakdufzcefrxufssqdslyfuiahtzjjdeaxqeiarcjpponoclynbtraaawrps";
+		long a = 0;
+		for (int i = 0; i <= s.length()-1; i++) {
+			if (s.charAt(i) == 'a') {
+				a++;
+			}
+		}
+		System.out.println("a: " + a);
+		
+		long len = s.length(); 
+		System.out.println("len: " + len);
+		
+		long n = 10; 
+		System.out.println("n: " + n);
+		
+		long v = Math.round(n/((len*1.0)/1.0));
+		System.out.println(v); 
+		
+		System.out.println("n/len: " + Math.round(v*1.0/1.0) * a); 
+//		System.out.println("n/len: " + Math.round((n/((len*100.0)/100.00))*a)); 
 	}
 }

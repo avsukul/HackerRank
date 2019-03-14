@@ -4,7 +4,6 @@ import java.io.IOException;
 
 public class RepeatedString {
 
-
 	// Complete the repeatedString function below.
 	static long repeatedString(String s, long n) {
 		int a  = 0, j = 0, aa = 0; long len = n % s.length();
@@ -13,7 +12,7 @@ public class RepeatedString {
 				a++;
 				if (len > 0) {
 					if (s.charAt(j) == 'a') {
-						aa++; j = i; len--;
+					aa++; j = i; len--;
 					}
 				}
 			}
@@ -25,7 +24,7 @@ public class RepeatedString {
 	}
 
 	public static void main(String[] args) throws IOException {
-		switch ("s10") {
+		switch ("S9") {
 		case "s": 
 			String s = "aba"; long n = 10;
 			System.out.println(repeatedString(s, n));
@@ -77,6 +76,7 @@ public class RepeatedString {
 			String s911 = "udjlitpopjhipmwgvggazhuzvcmzhulowmveqyktlakdufzcefrxufssqdslyfuiahtzjjdeaxqeiarcjpponoclynbtraaawrps";
 			long n911 = 872514961806L;
 			System.out.println(repeatedString(s911, n911));
+			break;
 
 		default:
 			String s11 = "aba"; long n100 = 10;
