@@ -6,11 +6,11 @@ public class RepeatedString {
 
 	// Complete the repeatedString function below.
 	static long repeatedString(String s, long n) {
-		int A  = 0, j = 0, remA = 0; 
+		int A  = 0, remA = 0; 
 		for (int i = 0 ; i <= s.length()-1; i++) {
-			j = i; A = s.charAt(i) == 'a' ? A+1 : A;
-			if (i < n % s.length() && s.charAt(j) == 'a') {
-				remA++; j = i;
+			A = s.charAt(i) == 'a' ? A+1 : A;
+			if (i < n % s.length() && s.charAt(i) == 'a') {
+				remA++;
 			}
 		}
 		return A * (n / s.length()) + remA;
