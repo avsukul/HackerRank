@@ -6,25 +6,18 @@ public class RepeatedString {
 
 	// Complete the repeatedString function below.
 	static long repeatedString(String s, long n) {
-		int a  = 0, j = 0, aa = 0; long len = n % s.length();
+		int A  = 0, j = 0, remA = 0; 
 		for (int i = 0 ; i <= s.length()-1; i++) {
-			if (s.charAt(i)== 'a') {
-				a++;
-				if (len > 0) {
-					if (s.charAt(j) == 'a') {
-					aa++; j = i; len--;
-					}
-				}
+			j = i; A = s.charAt(i) == 'a' ? A+1 : A;
+			if (i < n % s.length() && s.charAt(j) == 'a') {
+				remA++; j = i;
 			}
 		}
-		if ((n/s.length()) > 1000000.0) {
-			return (long) Math.round(Math.ceil((n/(s.length()*1.0)*1.00)/1.00 * a)) + aa;
-		}
-		return n/s.length() * a + aa;
+		return A * (n / s.length()) + remA;
 	}
 
 	public static void main(String[] args) throws IOException {
-		switch ("S9") {
+		switch ("") {
 		case "s": 
 			String s = "aba"; long n = 10;
 			System.out.println(repeatedString(s, n));
@@ -71,11 +64,17 @@ public class RepeatedString {
 			long n9 = 549382313570L;
 			System.out.println(repeatedString(s9, n9));
 			break;
-		
+
 		case "s10":
 			String s911 = "udjlitpopjhipmwgvggazhuzvcmzhulowmveqyktlakdufzcefrxufssqdslyfuiahtzjjdeaxqeiarcjpponoclynbtraaawrps";
 			long n911 = 872514961806L;
 			System.out.println(repeatedString(s911, n911));
+			break;
+
+		case "s11":
+			String s9111 = "jdiacikk";
+			long n9111 = 899491;
+			System.out.println(repeatedString(s9111, n9111));
 			break;
 
 		default:
@@ -107,11 +106,14 @@ public class RepeatedString {
 			String s91 = "epsxyyflvrrrxzvnoenvpegvuonodjoxfwdmcvwctmekpsnamchznsoxaklzjgrqruyzavshfbmuhdwwmpbkwcuomqhiyvuztwvq";
 			long n91 = 549382313570L;
 			System.out.println(repeatedString(s91, n91));
-			
-			String s9111 = "udjlitpopjhipmwgvggazhuzvcmzhulowmveqyktlakdufzcefrxufssqdslyfuiahtzjjdeaxqeiarcjpponoclynbtraaawrps";
-			long n9111 = 872514961806L;
-			System.out.println(repeatedString(s9111, n9111));
-			
+
+			String s101 = "udjlitpopjhipmwgvggazhuzvcmzhulowmveqyktlakdufzcefrxufssqdslyfuiahtzjjdeaxqeiarcjpponoclynbtraaawrps";
+			long n101 = 872514961806L;
+			System.out.println(repeatedString(s101, n101));
+
+			String s1111 = "jdiacikk";
+			long n111 = 899491;
+			System.out.println(repeatedString(s1111, n111));
 			break;
 		}
 	}
